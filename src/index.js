@@ -5,6 +5,7 @@ import App from './App';
 import CryptoContext from './CryptoContext';
 import "react-alice-carousel/lib/react-alice-carousel";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
+import 'firebase/app';
 
 ReactDOM.render(
   <React.StrictMode>
