@@ -4,7 +4,10 @@ import Carousel from './Carousel';
 
 const useStyles = makeStyles(() => ({
   banner: {
-    backgroundImage: "url(../banner2.jpg)",
+    backgroundImage: "url(../banner1.png)",
+    backgroundSize: "cover",
+    width: "100%",
+    backgroundPosition: "center",
   }, 
   bannerContent:{
     height: 400,
@@ -20,6 +23,10 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     textAlign: "center",
   },
+  logo: {
+    width: "20%",
+    margin: "auto",
+  }
 }));
 
 const Banner = () => {
@@ -28,13 +35,14 @@ const Banner = () => {
     <div className={classes.banner}>
       <Container className={classes.bannerContent}>
         <div className={classes.tagLine}>
-            <Typography 
+            {/* <Typography 
             variant="h2"
             style={{ fontWeight: "bold", 
                      marginBottom: 15,
                      fontFamily: "Montserrat",}}>
-                        Crypto Hunter
-            </Typography>
+                        CRYPTO ASSISTANT
+            </Typography> */}
+            <img src="../logo4.png" alt="logo" className={classes.logo} />
             <Typography 
             variant="h6"
             style={{ fontWeight: "subtitle2", 

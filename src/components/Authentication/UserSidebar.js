@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import {useEffect} from 'react';
@@ -59,6 +60,7 @@ const useStyles = makeStyles({
     padding: 10,
     borderRadius: 5,
     color: "black",
+    cursor: "pointer",
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
@@ -71,14 +73,15 @@ const useStyles = makeStyles({
 
 export default function UserSidebar() {
     const classes = useStyles();
+    const history = useHistory();
     const [state, setState] = React.useState({
         right: false,
     });
 
-    const {user, setAlert, watchlist, coins, fetchCoins, symbol,} = CryptoState();
+    const {user, setAlert, watchlist, coins, fetchCoins, symbol, currency} = CryptoState();
     useEffect(() => {
         fetchCoins();
-    }, []);
+    }, [currency]);
     
     // console.log(coins);
     // console.log(watchlist);
@@ -169,7 +172,7 @@ export default function UserSidebar() {
                                 // console.log(watchlist);
                                 if(watchlist && watchlist.includes(coin.id)){
                                     return (
-                                        <div className={classes.coin}>
+                                        <div className={classes.coin} onClick={() => history.push(`/coins/${coin.id}`)}>
                                             <span>{coin.name}</span>
                                             <span style={{ display: "flex", gap: 8 }}>
                                                 {symbol}

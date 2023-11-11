@@ -41,7 +41,7 @@ const Header = () => {
                             onClick={() => history.push(`/`)}
                             className={classes.title}
                             variant='h6'>
-                            Crypto Mans
+                            CRYPTO ASSISTANT
                         </Typography>
                         {/* <Button color="inherit">Login</Button> */}
                         <Select 
